@@ -1,0 +1,6 @@
+.card {
+    background-color: transparent;
+    backdrop-filter: brightness(50%) blur(10px);
+    padding: 2rem;
+    @apply rounded-xl;
+}
