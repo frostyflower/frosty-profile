@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Parallax } from "react-scroll-parallax";
+import { fetchUsername } from "../util/FetchUsername.js";
+
 import "./AboutMe.css";
 import ButtonGlow from "../components/ButtonGlow";
 
@@ -8,23 +10,16 @@ function AboutMe() {
   const [username, setUsername] = useState("Fetching username...");
 
   useEffect(() => {
-    const fetchUsername = async () => {
-      const url = `https://api.minetools.eu/uuid/${uuid}`;
+    const getUsername = async () => {
       try {
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log("Data fetched:", data);
-        if (data.name) {
-          setUsername(data.name);
-        } else {
-          setUsername("Username not found");
-        }
+        const name = await fetchUsername(uuid);
+        setUsername(name);
+        // eslint-disable-next-line no-unused-vars
       } catch (error) {
-        console.error("Error fetching username:", error);
         setUsername("Error fetching username");
       }
     };
-    fetchUsername();
+    getUsername();
   }, [uuid]);
 
   return (

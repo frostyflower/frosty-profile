@@ -3,7 +3,7 @@ const ButtonLink = ({ icon, title, link }) => {
   return (
     <div className="group relative">
       <button>
-        <a href={link}>
+        <a href={link} target="_blank">
           <i className={`fa-brands ${icon} fa-xl hover:scale-[120%] duration-300`}></i>
         </a>
       </button>

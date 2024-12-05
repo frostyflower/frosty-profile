@@ -1,13 +1,31 @@
+import { useEffect, useState } from "react";
+import { fetchUsername} from '../util/FetchUsername.js'
+
 import ButtonLink from "./ButtonLink";
 
 function Footer() {
+  const uuid = "a2e71b1b-fb24-4b19-97ab-9a9f3bb38f61";
+  const [username, setUsername] = useState("Fetching username...");
+
+  useEffect(() => {
+    const getUsername = async () => {
+      try {
+        const name = await fetchUsername(uuid);
+        setUsername(name);
+        // eslint-disable-next-line no-unused-vars
+      } catch (error) {
+        setUsername("Error fetching username");
+      }
+    };
+    getUsername();
+  }, [uuid]);
   return (
     <>
       <div className="md:px-[12rem] px-10 flex justify-between items-center bg-slate-800 py-6 border-t border-white border-opacity-25">
         <div>
           <p className="md:text-lg text-sm">
             Made with <i className="fa-solid fa-heart text-red-500"></i> by
-            FrostyFlower
+            {" "}{username}
           </p>
         </div>
         <div className="md:block hidden">
