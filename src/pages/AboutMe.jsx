@@ -28,7 +28,7 @@ function AboutMe() {
         <div className="stacked-div z-[1] flex items-center md:mx-[12rem] mx-10 md:gap-6 gap-0 h-screen">
           <div>
             <img
-              className="hidden md:block"
+              className="hidden md:block max-h-[400px]"
               src={`https://nmsr.nickac.dev/fullbodyiso/${uuid}`}
               alt={uuid}
             />
@@ -46,10 +46,8 @@ function AboutMe() {
               <span className="text-3xl font-bold">{username}</span>
             </p>
             <p className="mb-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque
-              nobis assumenda sint dolorem, laboriosam eligendi vitae, iusto,
-              ratione error beatae repudiandae hic eveniet veniam nostrum?
-              Dignissimos deleniti distinctio aliquam in.
+              A Minecraft player for 10+ years and been doing quite a few servers. <br/>
+              Contact below for Skript and small or medium size plugins.
             </p>
             <ButtonGlow link="#experiences" />
           </div>

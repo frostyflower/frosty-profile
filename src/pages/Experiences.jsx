@@ -49,7 +49,7 @@ function Experiences() {
             <div className="">
               <Card
                 imageUrl={Minehut}
-                description="Working on this small multi-gamemode server on Minehut on last november."
+                description="Working on some small multi-gamemode server on Minehut on last november 2024."
               />
             </div>
           </div>
